@@ -23,9 +23,9 @@ git clone https://github.com/modernciso/xzhack-demo
 
 Insert correct billing account in main.tf
 ```
-  data "google_billing_account" "acct" {
-    display_name = "<Your Billing Account Name>"  
-  }
+data "google_billing_account" "acct" {
+  display_name = "<Your Billing Account Name>"  
+}
 ```
 
 Change to desired google project name and id (will be created by the terraform script)
