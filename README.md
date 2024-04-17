@@ -58,14 +58,13 @@ We will install a Nodejs Express Server on Kali linux that will server as a simp
 git clone https://github.com/modernciso/xzhack-demo
 sudo apt install npm nodejs
 npm install --global yarn
-cd /opt
-sudo mkdir xzlistener
-cd xzlistener
+sudo mkdir /opt/xzlistener
+cp ./xzhack-demo/index.js /opt/xzlistener
+cp ./xzhack-demo/package.json /opt/xzlistener
+cd /opt/xzlistener
 sudo npm install --global yarn
 sudo npm install --global body-parser
 npm init
-sudo cp /home/kali/xzhack-demo/package.json /opt/xzlistener/package.json
-sudo cp /home/kali/xzhack-demo/index.js /opt/xzlistener/index.js
 go install github.com/amlweems/xzbot@latest
 export PATH=$PATH:/home/kali/go/bin
 ```
@@ -115,6 +114,7 @@ We only have limited characters for the attack (for every attempt everytime 64 c
 First we start out backchannel listener (best in a separate window)
 ```
 cd /opt/xzlistener
+yarn install
 yarn start &
 ```
 
