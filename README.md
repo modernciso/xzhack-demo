@@ -2,6 +2,8 @@
 This will create two vms within google cloud (admin-vm and developer-vm), both running on Ubuntu. The developer vm will get 
 and updated liblzma that is vulnerable to the xz-utils vulnerability. On both hosts the Lacework agent will be installed.
 Kudos to the xzbot team: https://github.com/amlweems/xzbot/tree/main
+<img width="589" alt="attack-picture" src="https://github.com/modernciso/xzhack-demo/assets/148051304/584d05f7-d2a6-4c48-b682-296b4055d744">
+
 
 ## Deploy the infrastructure to Google Cloud
 ### Access to Google Cloud
