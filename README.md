@@ -24,7 +24,7 @@ git clone https://github.com/modernciso/xzhack-demo
 Insert correct billing account in main.tf
 ```
   data "google_billing_account" "acct" {
-  display_name = "<Your Billing Account Name>"  
+    display_name = "<Your Billing Account Name>"  
   }
 ```
 
