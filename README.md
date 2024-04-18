@@ -52,6 +52,10 @@ terraform init
 terraform apply
 ```
 
+### onboard cloud account in Lacework
+<img width="809" alt="Screenshot 2024-04-18 at 11 14 38" src="https://github.com/modernciso/xzhack-demo/assets/148051304/1b4854bf-966e-4fb1-a8ce-ec21bcb10d71">
+
+
 ## Prepare Kali Linux
 We will install a Nodejs Express Server on Kali linux that will server as a simple backchannel
 ```
