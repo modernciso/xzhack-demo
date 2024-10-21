@@ -57,6 +57,7 @@ variable "gcp_service_list" {
     "iam.googleapis.com",
     "appenginereporting.googleapis.com",
     "pubsub.googleapis.com",
+    "cloudscheduler.googleapis.com",
     "serviceusage.googleapis.com"
   ]
 }
